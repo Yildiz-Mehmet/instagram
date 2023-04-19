@@ -8,9 +8,22 @@ function App() {
   const ref = useRef();
   useEffect(() => {
     let images = ref.current.querySelectorAll("img");
-    console.log(images);
-    // let total = images.length,
-    let current = 0;
+    let total = images.length,
+      count = 0;
+
+    setInterval(() => {
+      if (count > 0) {
+        images[count - 1].classList.add("opacity-0");
+      } else {
+        images[total - 1].classList.add("opacity-0");
+      }
+      images[count].classList.remove("opacity-0");
+      if (count === total - 1) {
+        count = 0;
+      } else {
+        count += 1;
+      }
+    }, 1000);
   }, [ref]);
 
   return (
