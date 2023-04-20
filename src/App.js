@@ -68,7 +68,18 @@ function App() {
           />
         </a>
 
-        <form></form>
+        <form>
+          <label className="block relative">
+            <input
+              required={true}
+              type="text"
+              className="bg-zing-50 border w-full h-[38px] rounded-sm outline-none text-sm focus:border-gray-400 px-2 valid:pt-[10px] peer "
+            />
+            <small className="absolute top-1/2 left-[9px] text-xs cursor-text pointer-events-none text-gray-500 -translate-y-1/2 transition-all peer-valid:text-[10px] peer-valid:top-2.5">
+              Phone number, username or email
+            </small>
+          </label>
+        </form>
       </div>
     </div>
   );
