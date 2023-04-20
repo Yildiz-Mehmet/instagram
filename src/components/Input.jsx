@@ -10,11 +10,6 @@ const Input = ({ label, ...props }) => {
       <small className="absolute top-1/2 left-[9px] text-xs cursor-text pointer-events-none text-gray-500 -translate-y-1/2 transition-all peer-valid:text-[10px] peer-valid:top-2.5">
         {label}
       </small>
-      {props?.type === "password" && (
-        <div className="absolute right-0 top-0 h-full flex items-center">
-          test
-        </div>
-      )}
     </label>
   );
 };
