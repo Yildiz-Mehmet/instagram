@@ -57,6 +57,14 @@ function App() {
           />
         </div>
       </div>
+      <div className="w-[350px] bg-white border">
+        <img
+          className="h-[51px] "
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/2560px-Instagram_logo.svg.png"
+          alt=""
+        />
+        <form></form>
+      </div>
     </div>
   );
 }
