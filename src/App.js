@@ -19,11 +19,13 @@ function App() {
       }
     };
     imageSlider();
-    setInterval(() => {
+    const interval = setInterval(() => {
       imageSlider();
     }, 3000);
 
-    return () => {};
+    return () => {
+      clearInterval(interval);
+    };
   }, [ref]);
 
   return (
