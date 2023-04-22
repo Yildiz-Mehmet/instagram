@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState } from "react";
 import Input from "./components/Input";
-import { FaFacebook } from "react-icons";
+import { FaFacebook } from "@react-icons/all-files";
 function App() {
   const ref = useRef();
   const [username, setUsername] = useState("");
@@ -104,6 +104,9 @@ function App() {
               OR
             </span>
             <div className="h-px bg-gray-300 flex-1" />
+          </div>
+          <div>
+            <FaFacebook />
           </div>
         </form>
       </div>
