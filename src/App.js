@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState } from "react";
 import Input from "./components/Input";
-import { FaFacebook } from "react-icons/all";
+import { FaFacebook } from "react-icons";
 function App() {
   const ref = useRef();
   const [username, setUsername] = useState("");
