@@ -95,23 +95,29 @@ function App() {
           <button
             disabled={!enable}
             type="submit"
-            className="h-[30px] rounded bg-brand font-medium text-white text-sm disabled:opacity-50"
+            className="h-[30px] rounded mt-1 bg-brand font-medium text-white text-sm disabled:opacity-50"
           >
             Log In
           </button>
           <div className="flex items-center">
             <div className="h-px bg-gray-300 flex-1" />
-            <span className="px-4 text-[13px] text-gray-500 font-semibold">
+            <span className="px-4 text-[13px] text-gray-500 font-semibold my-2">
               OR
             </span>
             <div className="h-px bg-gray-300 flex-1" />
           </div>
           <a
             href="#"
-            className="flex justify-center items-center gap-x-2 text-sm font-semibold text-facebook"
+            className="flex justify-center mb-2 items-center gap-x-2 text-sm font-semibold text-facebook"
           >
             <AiFillFacebook size={20} />
             Log in with Facebook
+          </a>
+          <a
+            href="#"
+            className="text-xs flex items-center justify-center text-link "
+          >
+            Forgot password?
           </a>
         </form>
       </div>
