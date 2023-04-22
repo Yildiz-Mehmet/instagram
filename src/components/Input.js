@@ -1,18 +1,15 @@
-import React, { useRef } from "react";
+import React from "react";
 import { useState, useEffect } from "react";
 
 const Input = ({ label, type = "text", ...props }) => {
   const [show, setShow] = useState(false);
   const [inputType, setType] = useState(type);
-  const inputRef = useRef();
 
   useEffect(() => {
     if (show) {
       setType("text");
-      inputRef.current.focus();
     } else if (type === "password") {
       setType("password");
-      inputRef.current.focus();
     }
   }, [show]);
 
@@ -20,7 +17,6 @@ const Input = ({ label, type = "text", ...props }) => {
     <label className="block relative">
       <input
         {...props}
-        ref={inputRef}
         required={true}
         type={inputType}
         className="bg-zing-50 border text-xs w-full h-[38px] px-2 rounded-sm outline-none focus:border-gray-400 valid:pt-[10px] peer"
@@ -30,15 +26,15 @@ const Input = ({ label, type = "text", ...props }) => {
       </small>
 
       {type === "password" && props?.value && (
-        <button
+        <div
           type="button"
           onClick={() => {
             setShow(!show);
           }}
-          className="absolute top-0 right-0 h-full flex items-center text-sm font-semibold pr-2"
+          className="cursor-pointer select-none absolute top-0 right-0 h-full flex items-center text-sm font-semibold pr-2"
         >
           {show ? "Hide" : "Show"}
-        </button>
+        </div>
       )}
     </label>
   );
