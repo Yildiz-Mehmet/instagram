@@ -1,6 +1,12 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
+import Input from "./components/Input";
 function App() {
   const ref = useRef();
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  const enable = username && password;
+
   useEffect(() => {
     const images = ref.current.querySelectorAll("img");
     let total = images.length;
@@ -67,59 +73,40 @@ function App() {
         </a>
 
         <form className="grid gap-y-1.5">
-          <label className="block relative">
-            <input
-              required={true}
-              type="text"
-              className="bg-zing-50 border text-xs w-full h-[38px] px-2 rounded-sm outline-none focus:border-gray-400 valid:pt-[10px] peer"
-            />
-            <small className="absolute top-1/2 left-[8px] text-xs cursor-text pointer-events-none text-gray-500 -translate-y-1/2 transition-all peer-valid:text-[10px] peer-valid:top-2.5">
-              For number, username or email
-            </small>
-          </label>
-          <label className="block relative">
-            <input
-              required={true}
-              type="password"
-              className="bg-zing-50 border text-xs w-full h-[38px] px-2 rounded-sm outline-none focus:border-gray-400 valid:pt-[10px] peer"
-            />
-            <small className="absolute top-1/2 left-[8px] text-xs cursor-text pointer-events-none text-gray-500 -translate-y-1/2 transition-all peer-valid:text-[10px] peer-valid:top-2.5">
-              Password
-            </small>
-          </label>
+          <Input
+            type="text"
+            label="Phone number, username or email"
+            value={username}
+            onChange={(e) => {
+              setUsername(e.target.value);
+            }}
+          />
+          <Input
+            type="password"
+            label="Password"
+            value={password}
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
+          />
+
           <button
-            disabled={true}
+            disabled={!enable}
             type="submit"
             className="h-[30px] rounded bg-brand font-medium text-white text-sm disabled:opacity-50"
           >
             Log In
           </button>
+          <div className="flex items-center">
+            <div className="h-px bg-gray-300 flex-1" />
+            <span className="px-4 text-[13px] text-gray-500 font-semibold">
+              OR
+            </span>
+            <div className="h-px bg-gray-300 flex-1" />
+          </div>
         </form>
       </div>
     </div>
   );
 }
 export default App;
-
-{
-  /* <img
-            className="w-full h-full absolute top-0 left-0 opacity-0 transition-opacity duration-1000 ease-linear"
-            src="https://www.instagram.com/static/images/homepage/screenshots/screenshot1-2x.png/cfd999368de3.png"
-            alt=""
-          />
-          <img
-            className="w-full h-full absolute top-0 left-0 opacity-0 transition-opacity duration-1000 ease-linear"
-            src="https://www.instagram.com/static/images/homepage/screenshots/screenshot2-2x.png/80b8aebdea57.png"
-            alt=""
-          />
-          <img
-            className="w-full h-full absolute top-0 left-0 opacity-0 transition-opacity duration-1000 ease-linear"
-            src="https://www.instagram.com/static/images/homepage/screenshots/screenshot3-2x.png/fe2540684ab2.png"
-            alt=""
-          />
-          <img
-            className="w-full h-full absolute top-0 left-0 opacity-0 transition-opacity duration-1000 ease-linear"
-            src="https://www.instagram.com/static/images/homepage/screenshots/screenshot4-2x.png/8e9224a71939.png"
-            alt=""
-          /> */
-}
