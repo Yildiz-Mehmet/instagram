@@ -1,6 +1,7 @@
 import { useRef, useEffect, useState } from "react";
 import Input from "./components/Input";
-import { FaFacebook } from "@react-icons/all-files";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 function App() {
   const ref = useRef();
   const [username, setUsername] = useState("");
@@ -106,7 +107,7 @@ function App() {
             <div className="h-px bg-gray-300 flex-1" />
           </div>
           <div>
-            <FaFacebook />
+            <FontAwesomeIcon icon="facebook" />
           </div>
         </form>
       </div>
